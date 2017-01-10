@@ -1,0 +1,10 @@
+<h1>Categories</h1>
+
+<% @categories.each do |category| %>
+  <h2><%= lin_to "/", category.name %></h2>
+  <h4><%= category.description %></h4>
+  <h4><%= category.admin_name %></h4>
+  <% category.products.each do |product| %>
+    <%= "#{product.name}  $#{product.price}" %>
+  <% end %>
+<% end %>
