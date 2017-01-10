@@ -1,10 +1,15 @@
 <h1>Categories</h1>
 
+<%= link_to "/categories/new", Create Category %>
+
 <% @categories.each do |category| %>
-  <h2><%= lin_to "/", category.name %></h2>
+  <h2><%= link_to "/categories/#{category.id}", category.name %></h2>
   <h4><%= category.description %></h4>
   <h4><%= category.admin_name %></h4>
+  <h4><%= category.thing1 %></h4>
+  <h4><%= category.thing2 %></h4>
+  <h4><%= category.thing3 %></h4>
   <% category.products.each do |product| %>
-    <%= "#{product.name}  $#{product.price}" %>
+    <%= link_to "/products/#{product.id}", "#{product.name}" %><%= "$#{product.price}" %>
   <% end %>
 <% end %>
